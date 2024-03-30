@@ -22,7 +22,7 @@ const handleRegistration = (event) => {
         password
       )
     ) {
-      console.log(info);
+      // console.log(info);
 
       fetch("https://cookhub-django.onrender.com/user/register/", {
         method: "POST",
@@ -30,7 +30,8 @@ const handleRegistration = (event) => {
         body: JSON.stringify(info),
       })
         .then((res) => res.json())
-        .then((data) => console.log(data));
+        .then((data) => console.log(data.username));
+        window.location.href = "mail.html";
     } else {
       document.getElementById("error").style.display = "block";
       document.getElementById("error").innerText =
@@ -61,7 +62,7 @@ const handleLogin = (event) => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log("logine data->",data);
+        // console.log("login data->",data);
 
         if (data.token && data.user_id) {
           localStorage.setItem("token", data.token);
