@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Restoran - Bootstrap Restaurant Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&family=Pacifico&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.2/dist/css/bootstrap.min.css"> -->
+<link rel="stylesheet" href="https://unpkg.com/bs-brain@2.0.3/components/logins/login-9/assets/css/login-9.css">
+</head>
+
+<body>
+    <div class="container-xxl bg-white p-0">
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+
+        <!-- Navbar & Hero Start -->
+        <div class="container-xxl position-relative p-0">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4 px-lg-5 py-3 py-lg-0">
+                <a href="" class="navbar-brand p-0">
+                    <h1 class="text-primary m-0"><i class="fa fa-utensils me-3"></i>CookHub</h1>
+                    <!-- <img src="img/logo.png" alt="Logo"> -->
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="fa fa-bars"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav ms-auto py-0 pe-4">
+                        <a href="index.html" class="nav-item nav-link active">Home</a>
+                        <!-- <a href="service.html" class="nav-item nav-link">Service</a> -->
+                        <span id="recipe-nav">
+                            
+                        </span>
+                        <a href="about.html" class="nav-item nav-link">About</a>
+                        <!-- <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                            <div class="dropdown-menu m-0">
+                                <a href="booking.html" class="dropdown-item">Booking</a>
+                                <a href="team.html" class="dropdown-item">About Us</a>
+                                <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+                            </div>
+                        </div> -->
+                        <a href="contact.html" class="nav-item nav-link">Contact</a>
+                        <span id="profile-nav">
+                            
+                        </span>
+                    </div>
+                    <span id="logged-in">
+                        <a href="login.html" class="me-2 btn btn-outline-info py-2 px-4">Login</a>
+                        <a href="register.html" class="btn btn-outline-primary py-2 px-4">Register</a>
+                    </span>
+                    <span id="logged-out" class="ms-2" onclick="handlelogOut()">
+                        <a class="btn btn-outline-danger py-2 px-4">Logout</a>
+                    </span>
+                    
+                </div>
+            </nav>
+
+            <div class="container-xxl py-5 bg-dark hero-header mb-5">
+                <div class="container text-center my-5 pt-5 pb-4">
+                    <h1 class="display-3 text-white mb-3 animated slideInDown">Your Profile</h1>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-center text-uppercase">
+                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item text-white active" aria-current="page">Profile</li>
+                        </ol>
+                    </nav>
+                </div>
+                <div class="container">
+                    <div class="row justify-content-md-center">
+                        <div class="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-6">
+                        <p class="text-light text-center lead fs-4 mb-5">The Profile page is your digital hub, where you can find all your recipe and edit them.</p>
+                        <hr class="w-50 mx-auto mb-5 mb-xl-9 border-dark-subtle">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <!-- Navbar & Hero End -->
+
+        <!-- <div id="profile-page" class="py-5">
+        </div> -->
+
+        <!-- profile  Component -->
+        <section class="bg-light py-3 py-md-5 py-xl-8">
+            
+        
+            <div class="container">
+            <div class="row gy-4 gy-lg-0">
+                <div class="col-12 col-lg-4 col-xl-3">
+                <div class="row gy-4">
+                    <div class="col-12">
+                    <div class="card widget-card border-light shadow-sm">
+                        <div id="pro-name" class="card-header text-bg-primary">Welcome, Ethan Leo</div>
+                        <div class="card-body">
+                        <div id="pro-image1" class="text-center mb-3">
+                            <img src="https://img.freepik.com/free-vector/isolated-young-handsome-man-different-poses-white-background-illustration_632498-859.jpg" class="img-fluid rounded-circle" alt="Profile Pic">
+                        </div>
+                        <h5 id="pro-name2" class="text-center mb-1"></h5>
+                        <p class="text-center text-secondary mb-4">Verfied Member</p>
+                        <ul class="list-group list-group-flush mb-4">
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <h6 class="m-0">Mobile Number</h6>
+                            <span id="mobile">01764016006</span>
+                            </li>
+                            <li id="user_fb" class="list-group-item d-flex justify-content-between align-items-center">
+                                
+                            <!-- <h6 class="m-0">Following</h6>
+                            <span>5,987</span> -->
+                            </li>
+                            <!-- <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <h6 class="m-0">Following</h6>
+                            <span>5,987</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <h6 class="m-0">Friends</h6>
+                            <span>4,620</span>
+                            </li> -->
+                        </ul>
+                        <!-- <div class="d-grid m-0">
+                            <button class="btn btn-outline-primary" type="button">Follow</button>
+                        </div> -->
+                        </div>
+                    </div>
+                    </div>
+                    <div class="col-12">
+                    <!-- <div class="card widget-card border-light shadow-sm">
+                        <div class="card-header text-bg-primary">Social Accounts</div>
+                        <div class="card-body">
+                        <a href="#!" class="d-inline-block bg-dark link-light lh-1 p-2 rounded">
+                            <i class="bi bi-youtube"></i>
+                        </a>
+                        <a href="#!" class="d-inline-block bg-dark link-light lh-1 p-2 rounded">
+                            <i class="bi bi-twitter-x"></i>
+                        </a>
+                        <a href="#!" class="d-inline-block bg-dark link-light lh-1 p-2 rounded">
+                            <i class="bi bi-facebook"></i>
+                        </a>
+                        <a href="#!" class="d-inline-block bg-dark link-light lh-1 p-2 rounded">
+                            <i class="bi bi-linkedin"></i>
+                        </a>
+                        </div>
+                    </div> -->
+                    </div>
+                    <!-- <div class="col-12">
+                    <div class="card widget-card border-light shadow-sm">
+                        <div class="card-header text-bg-primary">About Me</div>
+                        <div class="card-body">
+                        <ul class="list-group list-group-flush mb-0">
+                            <li class="list-group-item">
+                            <h6 class="mb-1">
+                                <span class="bii bi-mortarboard-fill me-2"></span>
+                                Education
+                            </h6>
+                            <span>M.S Computer Science</span>
+                            </li>
+                            <li class="list-group-item">
+                            <h6 class="mb-1">
+                                <span class="bii bi-geo-alt-fill me-2"></span>
+                                Location
+                            </h6>
+                            <span>Mountain View, California</span>
+                            </li>
+                            <li class="list-group-item">
+                            <h6 class="mb-1">
+                                <span class="bii bi-building-fill-gear me-2"></span>
+                                Company
+                            </h6>
+                            <span>GitHub Inc</span>
+                            </li>
+                        </ul>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="col-12">
+                    <div class="card widget-card border-light shadow-sm">
+                        <div class="card-header text-bg-primary">Skills</div>
+                        <div class="card-body">
+                        <span class="badge text-bg-primary">HTML</span>
+                        <span class="badge text-bg-primary">SCSS</span>
+                        <span class="badge text-bg-primary">Javascript</span>
+                        <span class="badge text-bg-primary">React</span>
+                        <span class="badge text-bg-primary">Vue</span>
+                        <span class="badge text-bg-primary">Angular</span>
+                        <span class="badge text-bg-primary">UI</span>
+                        <span class="badge text-bg-primary">UX</span>
+                        </div>
+                    </div>
+                    </div> -->
+                </div>
+                </div>
+                <div class="col-12 col-lg-8 col-xl-9">
+                <div class="card widget-card border-light shadow-sm">
+                    <div class="card-body p-4">
+                    <ul class="nav nav-tabs" id="profileTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="overview-tab" data-bs-toggle="tab" data-bs-target="#overview-tab-pane" type="button" role="tab" aria-controls="overview-tab-pane" aria-selected="true">Your Own Recipes</button>
+                        </li>
+                        <!-- <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Profile</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="email-tab" data-bs-toggle="tab" data-bs-target="#email-tab-pane" type="button" role="tab" aria-controls="email-tab-pane" aria-selected="false">Emails</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="password-tab" data-bs-toggle="tab" data-bs-target="#password-tab-pane" type="button" role="tab" aria-controls="password-tab-pane" aria-selected="false">Password</button>
+                        </li> -->
+                    </ul>
+                    <div class="tab-content pt-4" id="profileTabContent">
+                        <div class="tab-pane fade show active" id="overview-tab-pane" role="tabpanel" aria-labelledby="overview-tab" tabindex="0">
+                        <div id="pro-recipies" class="tab-content row gx-2 gy-2">
+                        </div>
+                        <!-- <h5 class="mb-3">About</h5>
+                        <p class="lead mb-3">Ethan Leo is a seasoned and results-driven Project Manager who brings experience and expertise to project management. With a proven track record of successfully delivering complex projects on time and within budget, Ethan Leo is the go-to professional for organizations seeking efficient and effective project leadership.</p>
+                        <h5 class="mb-3">Profile</h5> -->
+                        </div>
+                        <div class="tab-pane fade" id="email-tab-pane" role="tabpanel" aria-labelledby="email-tab" tabindex="0">
+                        <form action="#!">
+                            <fieldset class="row gy-3 gy-md-0">
+                            <legend class="col-form-label col-12 col-md-3 col-xl-2">Email Alerts</legend>
+                            <div class="col-12 col-md-9 col-xl-10">
+                                <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="emailChange">
+                                <label class="form-check-label" for="emailChange">
+                                    Email Changed
+                                </label>
+                                </div>
+                                <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="passwordChange">
+                                <label class="form-check-label" for="passwordChange">
+                                    Password Changed
+                                </label>
+                                </div>
+                                <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="weeklyNewsletter">
+                                <label class="form-check-label" for="weeklyNewsletter">
+                                    Weekly Newsletter
+                                </label>
+                                </div>
+                                <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="productPromotions">
+                                <label class="form-check-label" for="productPromotions">
+                                    Product Promotions
+                                </label>
+                                </div>
+                            </div>
+                            </fieldset>
+                            <div class="row">
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-primary mt-4">Save Changes</button>
+                            </div>
+                            </div>
+                        </form>
+                        </div>
+                        <div class="tab-pane fade" id="password-tab-pane" role="tabpanel" aria-labelledby="password-tab" tabindex="0">
+                        <form action="#!">
+                            <div class="row gy-3 gy-xxl-4">
+                            <div class="col-12">
+                                <label for="currentPassword" class="form-label">Current Password</label>
+                                <input type="password" class="form-control" id="currentPassword">
+                            </div>
+                            <div class="col-12">
+                                <label for="newPassword" class="form-label">New Password</label>
+                                <input type="password" class="form-control" id="newPassword">
+                            </div>
+                            <div class="col-12">
+                                <label for="confirmPassword" class="form-label">Confirm Password</label>
+                                <input type="password" class="form-control" id="confirmPassword">
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-primary">Change Password</button>
+                            </div>
+                            </div>
+                        </form>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+        
+        </section>
+        <!-- Profile main code over -->
+        
+
+        <!-- Footer Start -->
+        <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+            <div class="container py-5">
+                <div class="row g-5">
+                    <div class="col-lg-4 col-md-6">
+                        <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">CookHub</h4>
+                        <a class="btn btn-link" href="about.html">About Us</a>
+                        <a class="btn btn-link" href="contact.html">Contact Us</a>
+                        <a class="btn btn-link" href="#">Privacy Policy</a>
+                        <a class="btn btn-link" href="#">Terms & Condition</a>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Contact</h4>
+                        <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>123 Street, Uttara, Dhaka, Bangladesh</p>
+                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
+                        <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@example.com</p>
+                        <div class="d-flex pt-2">
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Opening</h4>
+                        <h5 class="text-light fw-normal">Monday - Saturday</h5>
+                        <p>09AM - 09PM</p>
+                        <h5 class="text-light fw-normal">Sunday</h5>
+                        <p>10AM - 08PM</p>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="copyright">
+                    <div class="row">
+                        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                            &copy; <a class="border-bottom" href="#">Cooking Hub</a>, All Right Reserved. 
+							
+                            
+                        </div>
+                        <div class="col-md-6 text-center text-md-end">
+                            <div class="footer-menu">
+                                <a href="">Home</a>
+                                <a href="">Cookies</a>
+                                <a href="">Help</a>
+                                <a href="">FQAs</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/details.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/profile.js"></script>
+</body>
+
+</html>
