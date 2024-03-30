@@ -140,6 +140,8 @@ const handlelogOut = () => {
         localStorage.removeItem("user_id");
         window.location.href = "login.html";
       });
+    const pi1 = document.getElementById("pro-image1");
+    pi1.innerHTML = `<img src="https://img.freepik.com/free-vector/isolated-young-handsome-man-different-poses-white-background-illustration_632498-859.jpg" class="img-fluid rounded-circle" alt="Profile Pic">`;
   };
   
 
