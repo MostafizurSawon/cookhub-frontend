@@ -1,15 +1,17 @@
-const loadCategory = () => {
+
+
+const loadCategory2 = () => {
   fetch("https://cookhub-django.onrender.com/recipe/category/")
     .then((res) => res.json())
-    .then((data) => displayCategory(data))
+    .then((data) => displayCategory2(data))
     .catch((err) => console.log(err));
 };
 
-const displayCategory = (categories) => {
+const displayCategory2 = (categories) => {
   //   console.log(services);
   categories.forEach((category) => {
-    // console.log(category);
-    const parent = document.getElementById("category-container");
+    console.log("all->>>",category);
+    const parent = document.getElementById("category-container2");
     let icon = "fa-solid fa-shrimp";
     if(category.name == "Main Courses")
     {
@@ -30,7 +32,7 @@ const displayCategory = (categories) => {
     const li = document.createElement("li");
     li.classList.add("nav-item");
     li.innerHTML = `
-    <a onclick="loadRecipies('${category.name}')" class="d-flex align-items-center text-start mx-3 ms-0 pb-3" data-bs-toggle="pill" href="#tab-1">
+    <a onclick="loadRecipies2('${category.name}')" class="d-flex align-items-center text-start mx-3 ms-0 pb-3" data-bs-toggle="pill" href="#tab-1">
           
     <i class="${icon} fa-2x text-primary"></i>
         <div class="ps-3">
@@ -44,12 +46,10 @@ const displayCategory = (categories) => {
   });
 };
 
-
-
-const loadRecipies = (search) => {
-  document.getElementById("recipies").innerHTML = "";
-  document.getElementById("spinner2").style.display = "block";
-  let length = document.getElementById("length");
+const loadRecipies2 = (search) => {
+  document.getElementById("recipies2").innerHTML = "";
+  document.getElementById("spinner3").style.display = "block";
+  let length = document.getElementById("length2");
   length.innerHTML = "";
   // console.log(search);
   fetch(
@@ -61,30 +61,30 @@ const loadRecipies = (search) => {
     .then((data) => {
       // console.log(data);
       if (data.results.length > 0) {
-        document.getElementById("spinner2").style.display = "none";
-        document.getElementById("nodata2").style.display = "none";
-        displyRecipies(data?.results);
+        document.getElementById("spinner3").style.display = "none";
+        document.getElementById("nodata3").style.display = "none";
+        displyRecipies2(data?.results);
         // console.log(data.results.length);
       } else {
         // console.log(data);
         
-        document.getElementById("recipies").innerHTML = "";
-        document.getElementById("spinner2").style.display = "none";
-        document.getElementById("nodata2").style.display = "block";
+        document.getElementById("recipies2").innerHTML = "";
+        document.getElementById("spinner3").style.display = "none";
+        document.getElementById("nodata3").style.display = "block";
       }
       
     });
 };
 
 
-const displyRecipies = (recipies) => {
+const displyRecipies2 = (recipies) => {
   // console.log(recipies.length);
   recipies?.forEach((recipie) => {
     
     const categoryNames = recipie.category.join(', ');
-    const parent = document.getElementById("recipies");
+    const parent = document.getElementById("recipies2");
 
-    let length = document.getElementById("length");
+    let length = document.getElementById("length2");
     length.innerHTML = `<h1 class="text-primary text-start">Recipe found: ${recipies.length}</h1>`;
 
     if(length)
@@ -153,38 +153,11 @@ const displyRecipies = (recipies) => {
   });
 };
 
-const handleSearch = () => {
-  const value = document.getElementById("search").value;
-  loadRecipies(value);
+const handleSearch2 = () => {
+  const value = document.getElementById("search2").value;
+  loadRecipies2(value);
 };
 
-// const loadReview = () => {
-//   fetch("https://cookhub-django.onrender.com/recipe/reviews/")
-//     .then((res) => res.json())
-//     .then((data) => displayReview(data));
-// };
 
-// const displayReview = (reviews) => {
-//   reviews.forEach((review) => {
-//     // console.log(review);
-//     const parent = document.getElementById("review-container");
-//     const div = document.createElement("div");
-//     div.classList.add("testimonial-item", "bg-transparent", "border", "rounded", "p-4");
-//     div.innerHTML = `
-//     <i class="fa fa-quote-left fa-2x text-primary mb-3"></i>
-//     <p>Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam</p>
-//     <div class="d-flex align-items-center">
-//         <img class="img-fluid flex-shrink-0 rounded-circle" src="img/testimonial-2.jpg" style="width: 50px; height: 50px;">
-//         <div class="ps-3">
-//             <h5 class="mb-1">Client Name</h5>
-//             <small>Profession2</small>
-//         </div>
-//     </div>
-//         `;
-//     parent.appendChild(div);
-//   });
-// };
-
-// loadReview();
-loadRecipies();
-loadCategory();
+loadRecipies2();
+loadCategory2();
